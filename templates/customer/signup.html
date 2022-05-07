@@ -19,25 +19,41 @@ h1{
 
     .container{
     width: 500px;
-    height:290px;
+    height:370px;
     background-color: #FFFAF0;
     margin-left: 550px;
-    border-radius: 10px;
+ 
+    border-radius: 10px ;
 }
-.firstname,.ename,.password{
+.firstname,.ename,.username,.confirmpassword{
     margin:15px;
     width: 200px;
     padding: 10px;
-    border: none;
+    border: 2px solid gray;
     border-radius: 4px;
 }
-.lastname,.phn,.confirm{
+.lastname,.phn,.password{
    
     width: 200px;
     padding: 10px;
-    border: none;
+    border: 2px solid gray;
     border-radius: 4px;
+    
 } 
+.confirm{
+    margin-left: 15px;
+}
+label{
+    margin-left: 260px;
+    margin-top: 25px;
+}
+.lbl{
+    margin-top: -57px;
+}
+.img{
+    margin:  .4rem 0;
+    margin-left: 260px;
+}
 button{
     width: 100px;
     padding: 10px;
@@ -47,7 +63,12 @@ button{
     border-radius: 4px;
     margin-left: 200px;
 }
-
+p{
+    margin-left: 15px;
+}
+a{
+    text-decoration: none;
+}
     </style>
 </head>
 <body>
@@ -58,9 +79,19 @@ button{
         <input type="text" name="lname" class="lastname" placeholder="last name">
         <input type="email" name="ename" class="ename" placeholder="email">
         <input type="tel" name="tel" class="phn" placeholder="mobile number">
+        <input type="text" name="user" class="username" placeholder="Username">
         <input type="password" name="psd" class="password" placeholder="password">
-        <input type="password" name="psd" class="confirm" placeholder=" confirm password">
-      <button>Sign up</button></a>
+        <input type="password" name="user" class="confirmpassword" placeholder="confirm password">
+       
+      <div class="lbl">
+        <label for="avatar">Choose a profile picture:</label>
+      </div>
+    
+        <input type="file"
+       id="avatar" name="avatar" class="img"
+       accept="image/png, image/jpeg"><br><br>
+      <button>Sign up</button><br>
+    <p> Already have an account ?&emsp;<a href="file:///E:/Restaurant/login.html">Log in</a></p> 
     </div>
  
     
