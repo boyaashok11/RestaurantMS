@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load widget_tweaks %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -72,28 +73,30 @@ a{
     </style>
 </head>
 <body>
+    {% include 'core/navbar.html' %}
     <center> <h1><font size="8" color="red"> Sign Up</font></h1></center>
     
     <div class="container">
-        <input type="text" name="fname" class="firstname" placeholder="first name">
-        <input type="text" name="lname" class="lastname" placeholder="last name">
-        <input type="email" name="ename" class="ename" placeholder="email">
-        <input type="tel" name="tel" class="phn" placeholder="mobile number">
-        <input type="text" name="user" class="username" placeholder="Username">
-        <input type="password" name="psd" class="password" placeholder="password">
-        <input type="password" name="user" class="confirmpassword" placeholder="confirm password">
-       
+        <form action="" method="post">
+            {% csrf_token %}
+        {% render_field userform.first_name|attr:'required:true'  class="firstname" placeholder="First Name" %}
+        {% render_field userform.last_name|attr:'required:true' class="lastname" placeholder="Last Name" %}       
+        {% render_field userform.email|attr:"required:true" class="ename" placeholder="Email" %}
+        {% render_field customerform.mobile_number|attr:"required:true" class="phn" placeholder="Mobile Number" %}
+        {% render_field userform.username|attr:"required:true" class="username" placeholder="Username" %}
+        {% render_field userform.password1|attr:"required:true" class="password" placeholder="Password" %}
+        {% render_field userform.password2|attr:"required:true" class="confirmpassword" placeholder="Confirm Password" %}
+        
       <div class="lbl">
         <label for="avatar">Choose a profile picture:</label>
       </div>
     
-        <input type="file"
-       id="avatar" name="avatar" class="img"
-       accept="image/png, image/jpeg"><br><br>
+       
+       {% render_field customerform.profile_pic|attr:"required:true" class="img" %}
       <button>Sign up</button><br>
-    <p> Already have an account ?&emsp;<a href="file:///E:/Restaurant/login.html">Log in</a></p> 
+    <p> Already have an account ?&emsp;<a href="{% url 'signin' %}">Log in</a></p> 
     </div>
  
-    
+</form>
 </body>
 </html>
